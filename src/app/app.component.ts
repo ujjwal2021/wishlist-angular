@@ -5,16 +5,12 @@ import { WishItem } from '../shared/model/wishItem';
 import { FormsModule } from '@angular/forms';
 import { WishListComponent } from './wish-list/wish-list.component';
 import { AddWishFormComponent } from './add-wish-form/add-wish-form.component';
-const filters = [
-  (item: WishItem) => item,
-  (item: WishItem) => !item.isComplete,
-  (item: WishItem) => item.isComplete,
+import { WishFilterComponent } from './wish-filter/wish-filter.component';
 
-]
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, FormsModule, WishListComponent, AddWishFormComponent],
+  imports: [CommonModule, RouterOutlet, FormsModule, WishListComponent, AddWishFormComponent, WishFilterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -24,11 +20,12 @@ export class AppComponent {
     new WishItem("Lets make a tea again"),
     new WishItem("Lets make a tea thrice"),
   ]
-  listFilter :any = "0"
   
-  get filteredItems(): WishItem[] {
-    return this.wishItems.filter(filters[this.listFilter])
-  }
+  filter: any = () => true;
+  
+  // get filteredItems(): WishItem[] {
+  //   return this.wishItems.filter(this.filter)
+  // }
   
 
 
