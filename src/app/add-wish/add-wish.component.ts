@@ -4,18 +4,18 @@ import { WishItem } from '../../shared/model/wishItem';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'add-wish-form',
+  selector: 'add-wish',
   standalone: true,
   imports: [CommonModule, FormsModule],
-  templateUrl: './add-wish-form.component.html',
-  styleUrl: './add-wish-form.component.css'
+  templateUrl: './add-wish.component.html',
+  styleUrl: './add-wish.component.css',
 })
-export class AddWishFormComponent {
-
+export class AddWishComponent {
   @Output() addWish = new EventEmitter<WishItem>();
-  newWishText = ""
-  addNewItems(){
-    this.addWish.emit(new WishItem(this.newWishText))
-    this.newWishText = ""
+
+  wishText: string = '';
+  addWishItem() {
+    if (this.wishText.length === 0) return;
+    this.addWish.emit(new WishItem(this.wishText));
   }
 }

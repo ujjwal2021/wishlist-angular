@@ -1,0 +1,15 @@
+<form class="add-wish-form mt-3">
+  <input
+    name="add-wish-item"
+    type="text"
+    class="form-control mb-2"
+    [(ngModel)]="wishText"
+  />
+  <button
+    type="submit"
+    class="btn btn-primary"
+    (click)="$event.preventDefault(); addWishItem()"
+  >
+    Add Wish
+  </button>
+</form>

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AddWishFormComponent } from './add-wish-form.component';
+import { ListFilterComponent } from './list-filter.component';
 
-describe('AddWishFormComponent', () => {
-  let component: AddWishFormComponent;
-  let fixture: ComponentFixture<AddWishFormComponent>;
+describe('ListFilterComponent', () => {
+  let component: ListFilterComponent;
+  let fixture: ComponentFixture<ListFilterComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AddWishFormComponent]
+      imports: [ListFilterComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(AddWishFormComponent);
+    fixture = TestBed.createComponent(ListFilterComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
